@@ -22,12 +22,3 @@ captionsData: 'alt',
 captionDelay: 250,
 });
 
-lightbox.on('show.simplelightbox', function (evt) {
-        if (evt.target.tagName === 'IMG') {
-          console.log('lightbox opened');
-          console.log(evt.target.src);
-        }
-      });
-
-console.log(galleryItems);
-console.log("lala")

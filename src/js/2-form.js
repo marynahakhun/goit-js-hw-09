@@ -1,5 +1,5 @@
 const form = document.querySelector(".feedback-form")
-const buttonSubmit = document.querySelector('[type="submit"]')
+
 form.addEventListener('input', saveFormState)
 const savedState = JSON.parse(localStorage.getItem('feedback-form-state'));
 if (savedState) {
@@ -16,12 +16,13 @@ function saveFormState() {
 form.addEventListener("submit", onSubmit);
 function onSubmit(evt){
     evt.preventDefault()
+    const savedState = JSON.parse(localStorage.getItem('feedback-form-state'));
     
     if(form.elements.email.value === "" || form.elements.message.value === "") {
     alert("всі поля мають бути заповненими")
     return
     }
-    console.log("email:",savedState.email,"message:",savedState.message  )
+    console.log(savedState )
     form.reset()
     localStorage.removeItem('feedback-form-state');
 
