@@ -8,8 +8,8 @@ if (savedState) {
 }
 function saveFormState() {
     const formData = {
-        email: form.elements.email.value.trim,
-        message: form.elements.message.value.trim
+        email: form.elements.email.value.trim(),
+        message: form.elements.message.value.trim()
     };
     localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
@@ -18,7 +18,7 @@ function onSubmit(evt){
     evt.preventDefault()
     const savedState = JSON.parse(localStorage.getItem('feedback-form-state'));
     
-    if(form.elements.email.value.trim === "" || form.elements.message.value.trim === "") {
+    if(form.elements.email.value.trim() === "" || form.elements.message.value.trim() === "") {
     alert("всі поля мають бути заповненими")
     return
     }
